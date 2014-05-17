@@ -1,0 +1,56 @@
+a {
+	color: blue;
+	font-size: 1.2em;
+}
+
+body {
+	background-color: green;
+}
+
+header {
+	background-color: white;
+	border-bottom: 2px solid black;
+	margin-bottom: 20px;
+}
+
+.block-container {
+	background-color: white;
+	border: 2px solid black;
+	height: auto;
+	opacity: 0.7;
+	padding: 20px;
+	width: auto;
+}
+
+#button-container {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	text-align: center;
+}
+
+button {
+	margin: 0 auto;
+}
+
+#music-container {
+	bottom: 20px;
+	right: 20px;
+	position: fixed;
+}
+
+#athlete-form input {
+	background-color: #EBFF7D;
+}
+
+a {
+    -webkit-transition: text-shadow 0.2s linear;
+    -moz-transition: text-shadow 0.2s linear;
+    -ms-transition: text-shadow 0.2s linear;
+    -o-transition: text-shadow 0.2s linear;
+    transition: text-shadow 0.2s linear;
+}
+
+a:hover {
+    text-shadow: 0 0 10px blue;
+}
