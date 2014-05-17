@@ -1,0 +1,17 @@
+{% extends 'crud/base.html' %}
+{% block title %}Athletes{% endblock %}
+
+{% block body_block %}
+	<div class="block-container">
+		{% if all_athletes %}
+		<h2>Athletes</h2><br />
+			<ul>
+				{% for athlete in all_athletes %}
+					<li><a href="{% url 'athletes:detail' athlete.id %}">{{athlete.first_name}} {{athlete.last_name}} «</a></li>
+				{% endfor %}
+			</ul>
+		{% else %}
+			<p>No athletes are available</p>
+		{% endif %}
+	</div>
+{% endblock %}

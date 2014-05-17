@@ -1,0 +1,13 @@
+{% extends 'crud/base.html' %}
+{% block title %}{{ athlete.first_name }} {{ athlete.last_name }}{% endblock %}
+
+{% block body_block %}
+	<div class="block-container">
+		<h1>{{ athlete.first_name }}'s Info</h1>
+
+		<strong>Name: </strong>{{ athlete.first_name }} {{ athlete.last_name }}<br />
+		<strong>Sport: </strong> {{ athlete.sport }}<br />
+
+		<strong>Recommendation: </strong> {{ athlete.get_recommendation_display }}
+	</div>
+{% endblock %}
