@@ -1,6 +1,6 @@
 # Django settings for athletesproject project.
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'athletesproject.apps.athletesapp',
+    'athletesproject.mytemplates',
 )
 
 # A sample logging configuration. The only tangible logging
