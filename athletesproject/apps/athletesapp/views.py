@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 from athletesproject.apps.athletesapp.models import Athlete
 from athletesproject.apps.athletesapp.forms import AthleteForm
 
+
 def index(request):
 	all_athletes = Athlete.objects.all()
 	template = loader.get_template('index.html')
@@ -16,7 +17,7 @@ def index(request):
 def detail(request, athlete_id):
 	# Find the athlete from the db using the id passed with the request
 	athlete = Athlete.objects.get(pk=athlete_id)
-	template = loader.get_template('detail.html')
+	template = loader.get_template('crud/detail.html')
 	context = RequestContext(request, {
 		'athlete' : athlete,
 		})
@@ -36,4 +37,4 @@ def add(request):
 	
 	else:
 		form = AthleteForm()
-	return render_to_response('add.html', { 'form' : form }, context)
+	return render_to_response('crud/add.html', { 'form' : form }, context)

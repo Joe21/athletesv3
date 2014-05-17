@@ -1,11 +1,11 @@
-{% extends 'crud/base.html' %}
+{% extends 'base.html' %}
 {% block title %}Add Athlete{% endblock %}
 
 {% block body_block %}
 	<div class="block-container">
 
 		<h2>Add an Athlete</h2><br />
-		<form id="athlete-form" method="post" action="/crud/add/">
+		<form id="athlete-form" method="post" action="/athletes/add/">
 			{% csrf_token %}
 			{% for hidden in form.hidden_fields %}
 				{{ hidden }}
