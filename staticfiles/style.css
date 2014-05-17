@@ -4,7 +4,11 @@ a {
 }
 
 body {
-	background-color: green;
+	background-image: url('football.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
 }
 
 header {

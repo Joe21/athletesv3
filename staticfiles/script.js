@@ -8,12 +8,12 @@ function meME(){
 	if(stealth === true){
 		el.append("<audio id='audio-player' src='https://s3.amazonaws.com/samplepublicbucket/me-unchartered_worlds_cutup.mp3' controls autoplay>");
 		block.hide();
-		$('body').css("background-image", "url('/static/crud/n7.jpg')");
+		$('body').css("background-image", "url('/static/n7.jpg')");
 		stealth = false;
 	} else {
 		el.empty();
 		block.show();
-		$('body').css("background-image", "url('/static/crud/football.jpg')");
+		$('body').css("background-image", "url('/static/football.jpg')");
 		stealth = true;
 	}
 }
@@ -27,15 +27,6 @@ function dorkyglow(){
 	};
 	$('h2').textShadow(option);
 }
-
-
-	// setInterval(function(){
-	// 	$('a').css('text-shadow: 0 0 10px red;');
-	// }, 1000);
-
-// function glow(){
-// 	this.css('text-shadow: 0 0 10px yellow;');
-// }
 
 // Global variable
 var stealth = true;
