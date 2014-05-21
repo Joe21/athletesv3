@@ -11,4 +11,6 @@ urlpatterns = patterns('',
 
 	# ex: /crud/add/
 	url(r'^add/$', views.add, name='add'),
+
+	url(r'^angular/$', views.angular, name='angular')
 )

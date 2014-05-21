@@ -5,7 +5,6 @@ from django.shortcuts import render_to_response
 from athletesproject.apps.athletesapp.models import Athlete
 from athletesproject.apps.athletesapp.forms import AthleteForm
 
-
 def index(request):
 	all_athletes = Athlete.objects.all()
 	template = loader.get_template('index.html')
@@ -38,3 +37,8 @@ def add(request):
 	else:
 		form = AthleteForm()
 	return render_to_response('add.html', { 'form' : form }, context)
+
+def angular(request):
+	template = loader.get_template('angular.html')
+	context = RequestContext(request)
+	return HttpResponse(template.render(context))
