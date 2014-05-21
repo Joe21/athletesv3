@@ -5,6 +5,10 @@ from django.shortcuts import render_to_response
 from athletesproject.apps.athletesapp.models import Athlete
 from athletesproject.apps.athletesapp.forms import AthleteForm
 
+# from django.core import serializers
+# from django.utils import simplejson
+import json
+
 def index(request):
 	all_athletes = Athlete.objects.all()
 	template = loader.get_template('index.html')
@@ -40,5 +44,15 @@ def add(request):
 
 def angular(request):
 	template = loader.get_template('angular.html')
-	context = RequestContext(request)
+	context = RequestContext(request, {
+		'all_athletes' : '',
+		})
 	return HttpResponse(template.render(context))
+
+def data(request):
+	data_array = []
+	all_athletes = Athlete.objects.all()
+	for athlete in all_athletes:
+		data_array.append({ 'first_name': athlete.first_name, 'last_name': athlete.last_name, 'recommendation': athlete.recommendation })
+
+	return HttpResponse(json.dumps(data_array))
