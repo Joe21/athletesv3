@@ -1,10 +1,49 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Angular{% endblock %}
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Athletes Angular</title>
+    {% load staticfiles %}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery=1 %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <script src="{% static 'angular/lib/angular.min.js' %}"></script>
+    <script src="{% static 'angular/lib/angular-route.min.js' %}"></script>
+  </head>
 
-{% block body_block %}
-	<div class="block-container">
-Testing
-	</div>
-	<script src="{% static 'angularscript.js' %}"></script>
-{% endblock %}
+  <body>
+    
+    <header class="top" role="header">
+      <div class="container">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-align-justify"></span>
+        </button>
+        <nav class="navbar-collapse collapse" role="navigation">
+            <ul class="navbar-nav nav">
+                <li><a href="{% url 'athletes:index' %}">Home</a></li>
+                <li><a href="{% url 'athletes:add' %}">Add Athlete</a></li>
+                <li><a href="{% url 'athletes:angular' %}">Angular</a></li>
+            </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="container-fluid">
+      <div class="angular-container" ng-view></div>
+    </div> <!-- Close container-fluid -->
+    <br />
+    
+    <div id="button-container">
+      <button id='crazy-button'>Super Cool Button</button>
+    </div>
+    <div id='music-container'></div>
+    <script src="{% static 'script.js' %}"></script>
+    <script src="{% static 'angularscript.js' %}"></script>
+    <script src="{% static 'angular/js/app.js' %}"></script>
+    <script src="{% static 'angular/js/controllers.js' %}"></script>
+  </body>
+
+</html>
